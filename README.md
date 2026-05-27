@@ -2,17 +2,17 @@
 
 > Enterprise healthcare dashboard built with Next.js, TypeScript, Tailwind CSS, React Query, and JWT auth.
 
-## 🚀 Features
+##  Features
 
-- 🔐 Secure demo authentication with JWT, httpOnly cookies, SameSite protection, and rate limiting
-- 📊 Executive dashboard with animated KPIs, activity area chart, and task status donut chart
-- 👥 User directory with debounced search, filters, sort, table/grid views, and pagination
-- ✅ Care operations task board with Kanban + list views and validated task creation modal
-- 📦 Product catalog with search, filters, loading states, and responsive product cards
-- 🎨 Responsive design system with light/dark theming, accent controls, and polished empty/loading states
-- 🛡 Security-first API layer with Zod validation, sanitization, cache headers, and protected routes
+-  Secure demo authentication with JWT, httpOnly cookies, SameSite protection, and rate limiting
+-  Executive dashboard with animated KPIs, activity area chart, and task status donut chart
+-  User directory with debounced search, filters, sort, table/grid views, and pagination
+-  Care operations task board with Kanban + list views and validated task creation modal
+-  Product catalog with search, filters, loading states, and responsive product cards
+-  Responsive design system with light/dark theming, accent controls, and polished empty/loading states
+-  Security-first API layer with Zod validation, sanitization, cache headers, and protected routes
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - Next.js 16 App Router
 - React 19
@@ -26,7 +26,7 @@
 - Lucide React
 - Vercel
 
-## ⚡ Quick Start
+##  Quick Start
 
 1. Install dependencies:
 
@@ -48,12 +48,12 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) and sign in with the demo credentials below.
 
-## 🔑 Demo Credentials
+##  Demo Credentials
 
 Email: `admin@aykacare.in`  
 Password: `Admin@123`
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 src
@@ -80,7 +80,7 @@ src
 └── types
 ```
 
-## 🔐 Security
+##  Security
 
 - JWT session token stored in an httpOnly cookie
 - SameSite=Strict CSRF cookie
@@ -90,7 +90,7 @@ src
 - Security headers and CSP configured in `next.config.ts`
 - Route protection through `src/proxy.ts`
 
-## 📊 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ src
 | `POST` | `/api/tasks` | Create a validated task record |
 | `GET` | `/api/stats` | Dashboard KPI, chart, and summary data |
 
-## 🌐 Deployment
+##  Deployment
 
 1. Push the repository to GitHub.
 2. Run `vercel` to link the project.
