@@ -1,11 +1,12 @@
 "use client";
 
+import { forwardRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 import { Spinner } from "@/components/ui/Spinner";
 import { cn } from "@/lib/utils";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart"> {
   variant?: "primary" | "secondary" | "ghost";
   loading?: boolean;
 }
