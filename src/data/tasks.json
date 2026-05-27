@@ -1,0 +1,452 @@
+[
+  {
+    "id": "384262ee-5f0f-46be-bca8-e2bac2e03848",
+    "title": "Review discharge summary for ICU patient",
+    "description": "Validate medication notes and follow-up instructions",
+    "assignee": "538b415d-e87d-41fe-839f-664bbe8ddfb3",
+    "priority": "high",
+    "status": "review",
+    "category": "Patient Care",
+    "dueDate": "2026-05-21T09:00:00.000Z",
+    "createdAt": "2026-05-23T09:00:00.000Z",
+    "tags": [
+      "discharge",
+      "icu"
+    ]
+  },
+  {
+    "id": "a511f426-af60-406b-9f6c-aec90a9c6a18",
+    "title": "Renew monthly compliance dashboard",
+    "description": "Prepare executive-ready compliance metrics for leadership",
+    "assignee": "f297e83a-ffa9-433f-ae62-1187d783f6a0",
+    "priority": "medium",
+    "status": "in-progress",
+    "category": "Reporting",
+    "dueDate": "2026-05-22T09:00:00.000Z",
+    "createdAt": "2026-05-21T09:00:00.000Z",
+    "tags": [
+      "compliance",
+      "monthly"
+    ]
+  },
+  {
+    "id": "894bff67-2ae5-4cff-9338-59ed2985694f",
+    "title": "Audit emergency shift roster",
+    "description": "Ensure night coverage is balanced for the next 2 weeks",
+    "assignee": "ebd5dc93-9f97-472d-89f5-aa4fc6b230ec",
+    "priority": "critical",
+    "status": "todo",
+    "category": "Admin",
+    "dueDate": "2026-05-23T09:00:00.000Z",
+    "createdAt": "2026-05-19T09:00:00.000Z",
+    "tags": [
+      "staffing",
+      "roster"
+    ]
+  },
+  {
+    "id": "db4d1204-7252-42a9-b531-86847ded554a",
+    "title": "Patch telemedicine intake form",
+    "description": "Resolve validation issue affecting mobile submissions",
+    "assignee": "70c1a4c6-c5a9-4f0b-b8f2-da73f0226ffb",
+    "priority": "high",
+    "status": "in-progress",
+    "category": "Technical",
+    "dueDate": "2026-05-24T09:00:00.000Z",
+    "createdAt": "2026-05-17T09:00:00.000Z",
+    "tags": [
+      "forms",
+      "frontend"
+    ]
+  },
+  {
+    "id": "99f2fd07-d380-4a2e-8647-69c56249a796",
+    "title": "Finalize cardiac rehab care plan",
+    "description": "Align physician guidance with nursing checklist",
+    "assignee": "a919b923-a2a3-483b-bf41-62eb43988d36",
+    "priority": "medium",
+    "status": "review",
+    "category": "Patient Care",
+    "dueDate": "2026-05-25T09:00:00.000Z",
+    "createdAt": "2026-05-15T09:00:00.000Z",
+    "tags": [
+      "cardiac",
+      "rehab"
+    ]
+  },
+  {
+    "id": "e3c1c51d-a26c-4087-b1ec-b408cc30e020",
+    "title": "Backfill EMR sync failures",
+    "description": "Reprocess failed records from the weekend batch",
+    "assignee": "640e89eb-7bb6-485d-aecd-71b5f43e44d2",
+    "priority": "critical",
+    "status": "todo",
+    "category": "Technical",
+    "dueDate": "2026-05-26T09:00:00.000Z",
+    "createdAt": "2026-05-13T09:00:00.000Z",
+    "tags": [
+      "emr",
+      "sync"
+    ]
+  },
+  {
+    "id": "4207cd6c-f691-4abe-9377-9d48ecfd2f08",
+    "title": "Prepare NABH evidence set",
+    "description": "Collect documents for upcoming quality review",
+    "assignee": "9f774054-6a92-4ccf-ad32-f6a68927901e",
+    "priority": "high",
+    "status": "in-progress",
+    "category": "Compliance",
+    "dueDate": "2026-05-27T09:00:00.000Z",
+    "createdAt": "2026-05-11T09:00:00.000Z",
+    "tags": [
+      "nabh",
+      "audit"
+    ]
+  },
+  {
+    "id": "4802c562-4279-4a94-b67c-c01a53b92c0b",
+    "title": "Follow up on pending lab escalations",
+    "description": "Coordinate with support and pathology teams",
+    "assignee": "dc3cfae3-dd9f-482f-b723-14cfe3b3e999",
+    "priority": "medium",
+    "status": "todo",
+    "category": "Patient Care",
+    "dueDate": "2026-05-28T09:00:00.000Z",
+    "createdAt": "2026-05-09T09:00:00.000Z",
+    "tags": [
+      "labs",
+      "escalation"
+    ]
+  },
+  {
+    "id": "25d582aa-4872-4756-9bae-b82cff5b5b9a",
+    "title": "Verify pharmacy access logs",
+    "description": "Review unusual login attempts from branch clinics",
+    "assignee": "d7f470ce-9e5e-41ee-b857-f1eef2a15aa1",
+    "priority": "critical",
+    "status": "review",
+    "category": "Compliance",
+    "dueDate": "2026-05-29T09:00:00.000Z",
+    "createdAt": "2026-05-07T09:00:00.000Z",
+    "tags": [
+      "security",
+      "audit"
+    ]
+  },
+  {
+    "id": "83a970cc-6adb-4015-bcf7-e297fde561b3",
+    "title": "Refine patient onboarding script",
+    "description": "Improve intake efficiency for support team",
+    "assignee": "197e63f5-b095-417e-a334-e411f846ea9f",
+    "priority": "low",
+    "status": "done",
+    "category": "Admin",
+    "dueDate": "2026-05-30T09:00:00.000Z",
+    "createdAt": "2026-05-05T09:00:00.000Z",
+    "tags": [
+      "support",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "13842b19-2e22-4f82-9949-c829dc23c909",
+    "title": "Create neuro triage summary",
+    "description": "Draft next-day action list for neurology unit",
+    "assignee": "0cbd38c4-a472-416e-be57-f6f3f9090f81",
+    "priority": "high",
+    "status": "todo",
+    "category": "Patient Care",
+    "dueDate": "2026-05-31T09:00:00.000Z",
+    "createdAt": "2026-05-03T09:00:00.000Z",
+    "tags": [
+      "triage",
+      "neuro"
+    ]
+  },
+  {
+    "id": "61f0dfd4-5952-433a-9832-fe62cb6e0895",
+    "title": "Resolve billing export mismatch",
+    "description": "Investigate rounding differences in finance report",
+    "assignee": "dfe165c0-9f6f-4a3d-bea4-862945e420d0",
+    "priority": "medium",
+    "status": "in-progress",
+    "category": "Reporting",
+    "dueDate": "2026-06-01T09:00:00.000Z",
+    "createdAt": "2026-05-01T09:00:00.000Z",
+    "tags": [
+      "billing",
+      "finance"
+    ]
+  },
+  {
+    "id": "0f33d980-69c2-4fdc-b249-2ec66d00d276",
+    "title": "Update consent form wording",
+    "description": "Apply legal-approved language changes",
+    "assignee": "39831c8c-d542-4178-9d5a-6a2bd7f4f9a0",
+    "priority": "medium",
+    "status": "done",
+    "category": "Compliance",
+    "dueDate": "2026-06-02T09:00:00.000Z",
+    "createdAt": "2026-04-29T09:00:00.000Z",
+    "tags": [
+      "consent",
+      "legal"
+    ]
+  },
+  {
+    "id": "12f1c32f-ec5e-4b6f-a41e-09aa8a458106",
+    "title": "Roll out doctor availability view",
+    "description": "Expose clinician availability to call-center staff",
+    "assignee": "7c0d403d-24fe-4059-8b55-b61770f4a0c7",
+    "priority": "high",
+    "status": "review",
+    "category": "Technical",
+    "dueDate": "2026-06-03T09:00:00.000Z",
+    "createdAt": "2026-04-27T09:00:00.000Z",
+    "tags": [
+      "availability",
+      "ui"
+    ]
+  },
+  {
+    "id": "5e19cbe9-507c-46ef-888a-983fd3b51bda",
+    "title": "Close outstanding helpdesk tickets",
+    "description": "Clear aged tickets related to appointment edits",
+    "assignee": "e877c4b8-b7fe-4d4d-b4c4-da2322cb8a2f",
+    "priority": "low",
+    "status": "done",
+    "category": "Admin",
+    "dueDate": "2026-06-04T09:00:00.000Z",
+    "createdAt": "2026-04-25T09:00:00.000Z",
+    "tags": [
+      "helpdesk",
+      "tickets"
+    ]
+  },
+  {
+    "id": "c59d9733-65a9-4c00-b6c6-a5cc675950e1",
+    "title": "Run infection-control checklist",
+    "description": "Confirm each ward submitted weekly checklist",
+    "assignee": "1f8241b5-d32e-4e02-922c-139075bc7b4c",
+    "priority": "high",
+    "status": "todo",
+    "category": "Compliance",
+    "dueDate": "2026-06-05T09:00:00.000Z",
+    "createdAt": "2026-04-23T09:00:00.000Z",
+    "tags": [
+      "infection",
+      "weekly"
+    ]
+  },
+  {
+    "id": "134f046b-f3f6-4190-8f9c-300500d42a5b",
+    "title": "Publish patient retention report",
+    "description": "Share weekly retention metrics with founders",
+    "assignee": "f1294754-76ca-4488-9423-3dac627e2357",
+    "priority": "medium",
+    "status": "done",
+    "category": "Reporting",
+    "dueDate": "2026-06-06T09:00:00.000Z",
+    "createdAt": "2026-04-21T09:00:00.000Z",
+    "tags": [
+      "retention",
+      "weekly"
+    ]
+  },
+  {
+    "id": "4f0a5c44-987e-4541-8417-d8f561f4ad26",
+    "title": "Coordinate ambulance vendor renewal",
+    "description": "Confirm SLA and cost approvals",
+    "assignee": "d5db2752-d736-474a-a5ae-b57b69b5a469",
+    "priority": "high",
+    "status": "in-progress",
+    "category": "Admin",
+    "dueDate": "2026-06-07T09:00:00.000Z",
+    "createdAt": "2026-04-19T09:00:00.000Z",
+    "tags": [
+      "vendor",
+      "sla"
+    ]
+  },
+  {
+    "id": "8e3d8695-1cad-4887-b78a-60ce796c8ccf",
+    "title": "Improve claims rejection tracking",
+    "description": "Add severity tags to rejected claims queue",
+    "assignee": "ee237c12-d437-4d89-a28f-ca19fc8a4f22",
+    "priority": "medium",
+    "status": "review",
+    "category": "Technical",
+    "dueDate": "2026-06-08T09:00:00.000Z",
+    "createdAt": "2026-04-17T09:00:00.000Z",
+    "tags": [
+      "claims",
+      "analytics"
+    ]
+  },
+  {
+    "id": "c42c219a-4d16-41e9-b55a-69a7eaa46ddc",
+    "title": "Approve ICU device maintenance",
+    "description": "Schedule preventive maintenance for monitors",
+    "assignee": "1d748810-1ec2-4ab8-96de-07276c26d99b",
+    "priority": "critical",
+    "status": "todo",
+    "category": "Admin",
+    "dueDate": "2026-06-09T09:00:00.000Z",
+    "createdAt": "2026-04-15T09:00:00.000Z",
+    "tags": [
+      "devices",
+      "maintenance"
+    ]
+  },
+  {
+    "id": "71a26b6d-b760-4f15-a222-1de37f78fd8a",
+    "title": "Review doctor credential renewals",
+    "description": "Escalate licenses expiring within 30 days",
+    "assignee": "465335be-5fa6-4a1f-8a09-53a0dfa9e234",
+    "priority": "critical",
+    "status": "in-progress",
+    "category": "Compliance",
+    "dueDate": "2026-06-10T09:00:00.000Z",
+    "createdAt": "2026-04-13T09:00:00.000Z",
+    "tags": [
+      "credentials",
+      "licensing"
+    ]
+  },
+  {
+    "id": "414e5d4f-17a3-4a8c-ac9c-4f1750e45a24",
+    "title": "Streamline OPD queue reporting",
+    "description": "Reduce lag in queue occupancy insights",
+    "assignee": "8b426bd8-bc7b-4747-b97f-18fea2ff1ad9",
+    "priority": "medium",
+    "status": "review",
+    "category": "Reporting",
+    "dueDate": "2026-06-11T09:00:00.000Z",
+    "createdAt": "2026-04-11T09:00:00.000Z",
+    "tags": [
+      "opd",
+      "queue"
+    ]
+  },
+  {
+    "id": "39b23572-a019-4c06-960a-b37156fda964",
+    "title": "Confirm dietician handoff notes",
+    "description": "Ensure all notes are visible in patient timeline",
+    "assignee": "eecb6f57-bcba-4815-8b41-f69ace851f74",
+    "priority": "low",
+    "status": "done",
+    "category": "Patient Care",
+    "dueDate": "2026-06-12T09:00:00.000Z",
+    "createdAt": "2026-04-09T09:00:00.000Z",
+    "tags": [
+      "handoff",
+      "nutrition"
+    ]
+  },
+  {
+    "id": "ab89aa4b-70e7-41ff-a2b9-e9b2f9ae46f1",
+    "title": "Prepare sprint demo for care ops",
+    "description": "Highlight automation wins and open blockers",
+    "assignee": "456358ef-b2f3-4f61-b2fa-a4754224bcd1",
+    "priority": "low",
+    "status": "in-progress",
+    "category": "Technical",
+    "dueDate": "2026-06-13T09:00:00.000Z",
+    "createdAt": "2026-04-07T09:00:00.000Z",
+    "tags": [
+      "sprint",
+      "demo"
+    ]
+  },
+  {
+    "id": "667db826-db16-4bf8-87fa-75876e6a5ad7",
+    "title": "Escalate delayed radiology reads",
+    "description": "Notify duty doctors about urgent read backlog",
+    "assignee": "97e9b703-c6bd-4a51-9beb-645c1268618c",
+    "priority": "critical",
+    "status": "todo",
+    "category": "Patient Care",
+    "dueDate": "2026-06-14T09:00:00.000Z",
+    "createdAt": "2026-04-05T09:00:00.000Z",
+    "tags": [
+      "radiology",
+      "urgent"
+    ]
+  },
+  {
+    "id": "728a4d69-6d68-4541-9204-c3c922472f6f",
+    "title": "Refresh admin SOP handbook",
+    "description": "Update screenshots and policy references",
+    "assignee": "538b415d-e87d-41fe-839f-664bbe8ddfb3",
+    "priority": "low",
+    "status": "done",
+    "category": "Admin",
+    "dueDate": "2026-06-15T09:00:00.000Z",
+    "createdAt": "2026-04-03T09:00:00.000Z",
+    "tags": [
+      "sop",
+      "documentation"
+    ]
+  },
+  {
+    "id": "840e75fe-212b-4a34-a27a-e47322d7e78a",
+    "title": "Validate call-center QA sample",
+    "description": "Score this week?s patient-support recordings",
+    "assignee": "f297e83a-ffa9-433f-ae62-1187d783f6a0",
+    "priority": "medium",
+    "status": "review",
+    "category": "Reporting",
+    "dueDate": "2026-06-16T09:00:00.000Z",
+    "createdAt": "2026-04-01T09:00:00.000Z",
+    "tags": [
+      "qa",
+      "calls"
+    ]
+  },
+  {
+    "id": "9c98b226-8508-48fe-88a7-fc27409c2660",
+    "title": "Inspect backup recovery process",
+    "description": "Run drill for disaster recovery readiness",
+    "assignee": "ebd5dc93-9f97-472d-89f5-aa4fc6b230ec",
+    "priority": "high",
+    "status": "in-progress",
+    "category": "Technical",
+    "dueDate": "2026-06-17T09:00:00.000Z",
+    "createdAt": "2026-03-30T09:00:00.000Z",
+    "tags": [
+      "backup",
+      "drill"
+    ]
+  },
+  {
+    "id": "86af2c2e-6c6e-4079-86aa-57b773a455c1",
+    "title": "Send medication adherence nudges",
+    "description": "Launch targeted reminders for at-risk patients",
+    "assignee": "70c1a4c6-c5a9-4f0b-b8f2-da73f0226ffb",
+    "priority": "medium",
+    "status": "todo",
+    "category": "Patient Care",
+    "dueDate": "2026-06-18T09:00:00.000Z",
+    "createdAt": "2026-03-28T09:00:00.000Z",
+    "tags": [
+      "adherence",
+      "messaging"
+    ]
+  },
+  {
+    "id": "a2633840-07a1-48fa-adae-065ca1671adf",
+    "title": "Close month-end compliance actions",
+    "description": "Verify all corrective actions are documented",
+    "assignee": "a919b923-a2a3-483b-bf41-62eb43988d36",
+    "priority": "high",
+    "status": "done",
+    "category": "Compliance",
+    "dueDate": "2026-06-19T09:00:00.000Z",
+    "createdAt": "2026-03-26T09:00:00.000Z",
+    "tags": [
+      "month-end",
+      "capa"
+    ]
+  }
+]

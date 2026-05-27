@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AYKA Care Dashboard
 
-## Getting Started
+> Enterprise healthcare dashboard built with Next.js, TypeScript, Tailwind CSS, React Query, and JWT auth.
 
-First, run the development server:
+## 🚀 Features
+
+- 🔐 Secure demo authentication with JWT, httpOnly cookies, SameSite protection, and rate limiting
+- 📊 Executive dashboard with animated KPIs, activity area chart, and task status donut chart
+- 👥 User directory with debounced search, filters, sort, table/grid views, and pagination
+- ✅ Care operations task board with Kanban + list views and validated task creation modal
+- 🎨 Responsive design system with light/dark theming, accent controls, and polished empty/loading states
+- 🛡 Security-first API layer with Zod validation, sanitization, cache headers, and protected routes
+
+## 🛠 Tech Stack
+
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- TanStack React Query
+- Zustand
+- React Hook Form + Zod
+- Radix UI primitives
+- Recharts
+- Lucide React
+- Vercel
+
+## ⚡ Quick Start
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Create local environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) and sign in with the demo credentials below.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔑 Demo Credentials
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Email: `admin@aykacare.in`  
+Password: `Admin@123`
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src
+├── app
+│   ├── (auth)/login
+│   ├── (dashboard)/dashboard
+│   ├── (dashboard)/users
+│   ├── (dashboard)/tasks
+│   ├── (dashboard)/settings
+│   ├── api/auth
+│   ├── api/users
+│   ├── api/tasks
+│   └── api/stats
+├── components
+│   ├── dashboard
+│   ├── layout
+│   ├── tasks
+│   ├── ui
+│   └── users
+├── data
+├── hooks
+├── lib
+├── store
+└── types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔐 Security
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- JWT session token stored in an httpOnly cookie
+- SameSite=Strict CSRF cookie
+- Rate limiting on login requests
+- Zod validation for auth, filters, profile data, and task creation
+- Sanitized request inputs
+- Security headers and CSP configured in `next.config.ts`
+- Route protection through `src/proxy.ts`
 
-## Deploy on Vercel
+## 📊 API Endpoints
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `POST` | `/api/auth/login` | Authenticate demo admin and issue session |
+| `POST` | `/api/auth/logout` | Clear session + CSRF cookies |
+| `GET` | `/api/users` | Filtered, sorted, paginated user directory |
+| `GET` | `/api/tasks` | Filtered, paginated task board data |
+| `POST` | `/api/tasks` | Create a validated task record |
+| `GET` | `/api/stats` | Dashboard KPI, chart, and summary data |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Deployment
+
+1. Push the repository to GitHub.
+2. Run `vercel` to link the project.
+3. Add the production environment variables:
+   - `JWT_SECRET`
+   - `NEXT_PUBLIC_APP_URL`
+   - `NEXT_PUBLIC_APP_NAME`
+4. Deploy with:
+
+```bash
+vercel --prod
+```
