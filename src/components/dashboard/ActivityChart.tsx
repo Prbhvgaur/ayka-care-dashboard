@@ -20,67 +20,88 @@ export default function ActivityChart({
   data: StatsResponse["activityData"];
 }) {
   return (
-    <Card className="h-[360px] p-6">
-      <div className="mb-4">
-        <p className="eyebrow">Operations Activity</p>
-        <h2 className="font-display text-2xl font-semibold">Activity over last 7 days</h2>
+    <Card className="h-[360px] p-6 relative overflow-hidden group">
+      <div className="absolute top-0 right-0 p-8 opacity-[0.03] pointer-events-none">
+        <div className="grid grid-cols-4 gap-4">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <div key={i} className="h-12 w-12 rounded-full border border-black dark:border-white" />
+          ))}
+        </div>
       </div>
-      <ResponsiveContainer height="100%" width="100%">
-        <AreaChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-          <defs>
-            <linearGradient id="usersGradient" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="5%" stopColor="var(--color-brand)" stopOpacity={0.25} />
-              <stop offset="95%" stopColor="var(--color-brand)" stopOpacity={0} />
-            </linearGradient>
-            <linearGradient id="tasksGradient" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="5%" stopColor="var(--color-success)" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="var(--color-success)" stopOpacity={0} />
-            </linearGradient>
-          </defs>
-          <CartesianGrid stroke="var(--border)" strokeDasharray="6 6" vertical={false} />
-          <XAxis
-            dataKey="date"
-            tickFormatter={formatActivityDate}
-            tickLine={false}
-            axisLine={false}
-            tick={{ fill: "var(--text-secondary)", fontSize: 12, fontWeight: 500 }}
-            dy={10}
-          />
-          <YAxis 
-            tickLine={false} 
-            axisLine={false} 
-            tick={{ fill: "var(--text-secondary)", fontSize: 12, fontWeight: 500 }}
-          />
-          <Tooltip 
-            contentStyle={{ 
-              backgroundColor: "var(--bg-secondary)", 
-              borderRadius: "16px", 
-              border: "1px solid var(--border)",
-              boxShadow: "var(--shadow-lg)",
-              backdropFilter: "blur(8px)"
-            }}
-            itemStyle={{ fontWeight: 600 }}
-          />
-          <Area 
-            type="monotone"
-            dataKey="users" 
-            fill="url(#usersGradient)" 
-            stroke="var(--color-brand)" 
-            strokeWidth={4} 
-            animationDuration={1500}
-            activeDot={{ r: 6, strokeWidth: 0 }}
-          />
-          <Area 
-            type="monotone"
-            dataKey="tasks" 
-            fill="url(#tasksGradient)" 
-            stroke="var(--color-success)" 
-            strokeWidth={4} 
-            animationDuration={2000}
-            activeDot={{ r: 6, strokeWidth: 0 }}
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+      
+      <div className="flex items-center justify-between mb-8 relative z-10">
+        <div>
+          <p className="text-[11px] font-bold text-blue-500 uppercase tracking-[0.2em] mb-1">Utilization</p>
+          <h2 className="text-2xl font-bold tracking-tighter">System Pulse</h2>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1.5">
+            <div className="h-2 w-2 rounded-full bg-black dark:bg-white" />
+            <span className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider">Active Users</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="h-2 w-2 rounded-full bg-[var(--border)] group-hover:bg-blue-400 transition-colors" />
+            <span className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider">Tasks</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="h-[220px] relative z-10">
+        <ResponsiveContainer height="100%" width="100%">
+          <AreaChart data={data} margin={{ top: 0, right: 0, left: -25, bottom: 0 }}>
+            <defs>
+              <linearGradient id="solidGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="var(--text-primary)" stopOpacity={0.05} />
+                <stop offset="100%" stopColor="var(--text-primary)" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid stroke="var(--border)" strokeDasharray="3 3" vertical={false} strokeOpacity={0.5} />
+            <XAxis
+              dataKey="date"
+              tickFormatter={formatActivityDate}
+              tickLine={false}
+              axisLine={false}
+              tick={{ fill: "var(--text-muted)", fontSize: 10, fontWeight: 700 }}
+              dy={15}
+            />
+            <YAxis 
+              tickLine={false} 
+              axisLine={false} 
+              tick={{ fill: "var(--text-muted)", fontSize: 10, fontWeight: 700 }}
+            />
+            <Tooltip 
+              cursor={{ stroke: 'var(--border)', strokeWidth: 1 }}
+              contentStyle={{ 
+                backgroundColor: "var(--bg-primary)", 
+                borderRadius: "8px", 
+                border: "1px solid var(--border)",
+                boxShadow: "var(--shadow-lg)",
+                padding: "8px 12px"
+              }}
+              itemStyle={{ fontWeight: 700, fontSize: '11px', textTransform: 'uppercase' }}
+              labelStyle={{ fontWeight: 800, fontSize: '10px', marginBottom: '4px', opacity: 0.5 }}
+            />
+            <Area 
+              type="stepAfter"
+              dataKey="users" 
+              fill="url(#solidGradient)" 
+              stroke="var(--text-primary)" 
+              strokeWidth={2} 
+              animationDuration={1000}
+              activeDot={{ r: 4, strokeWidth: 0, fill: 'var(--text-primary)' }}
+            />
+            <Area 
+              type="stepAfter"
+              dataKey="tasks" 
+              fill="transparent" 
+              stroke="var(--border)" 
+              strokeWidth={2} 
+              strokeDasharray="4 4"
+              animationDuration={1500}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </Card>
   );
 }
