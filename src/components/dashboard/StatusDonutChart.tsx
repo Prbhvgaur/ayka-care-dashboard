@@ -14,17 +14,17 @@ export default function StatusDonutChart({
   const chartData = Object.entries(data).map(([name, value]) => ({ name, value }));
 
   return (
-    <Card hoverable className="h-[360px] p-6 relative">
-      <div className="flex items-center justify-between mb-6">
+    <Card hoverable className="h-[360px] p-5">
+      <div className="flex items-center justify-between mb-8">
         <div>
-          <p className="eyebrow text-blue-600">Task Flow</p>
-          <h2 className="font-display text-2xl font-bold tracking-tight">Distribution</h2>
+          <p className="text-[11px] font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">Utilization</p>
+          <h2 className="text-xl font-bold tracking-tight">Task Load</h2>
         </div>
-        <div className="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 shadow-sm">
-          <span className="text-xl">📊</span>
+        <div className="text-[10px] font-bold bg-zinc-50 dark:bg-zinc-900 px-2 py-1 rounded border border-zinc-100 dark:border-zinc-800 uppercase tracking-widest text-zinc-400">
+          Realtime
         </div>
       </div>
-      <div className="h-[200px] relative">
+      <div className="h-[180px] relative">
         <ResponsiveContainer height="100%" width="100%">
           <PieChart>
             <Pie
@@ -32,44 +32,46 @@ export default function StatusDonutChart({
               cx="50%"
               cy="50%"
               dataKey="value"
-              innerRadius={55}
+              innerRadius={60}
               outerRadius={80}
-              paddingAngle={6}
-              animationDuration={1500}
+              paddingAngle={2}
+              animationDuration={800}
               stroke="none"
             >
               {chartData.map((entry, index) => (
-                <Cell fill={COLORS[index % COLORS.length]} key={entry.name} className="outline-none hover:opacity-80 transition-opacity" />
+                <Cell fill={index === 0 ? 'var(--text-primary)' : 'var(--border)'} key={entry.name} />
               ))}
             </Pie>
             <Tooltip 
               contentStyle={{ 
-                backgroundColor: "var(--bg-secondary)", 
-                borderRadius: "16px", 
+                backgroundColor: "var(--bg-primary)", 
+                borderRadius: "8px", 
                 border: "1px solid var(--border)",
                 boxShadow: "var(--shadow-lg)",
-                backdropFilter: "blur(120px)"
+                padding: "8px 12px"
               }}
-              itemStyle={{ fontWeight: 600, fontSize: '12px' }}
+              itemStyle={{ fontWeight: 700, fontSize: '11px', textTransform: 'uppercase' }}
             />
           </PieChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <span className="text-3xl font-bold tracking-tighter">
+          <span className="text-3xl font-bold tracking-tighter tabular-nums">
             {chartData.reduce((acc, curr) => acc + curr.value, 0)}
           </span>
-          <span className="text-[10px] font-bold text-slate-400 border-t border-slate-100 mt-1 uppercase tracking-widest pt-1">Total</span>
+          <span className="text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em] mt-1">Total</span>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 mt-6">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3 mt-8 pt-6 border-t border-zinc-50 dark:border-zinc-900">
         {chartData.map((item, index) => (
-          <div className="flex items-center gap-2 group cursor-default" key={item.name}>
-            <div
-              className="h-2 w-2 rounded-full shadow-[0_0_8px_rgba(0,0,0,0.1)] group-hover:scale-125 transition-transform"
-              style={{ backgroundColor: COLORS[index % COLORS.length] }}
-            />
-            <span className="text-xs font-bold text-slate-500 capitalize uppercase tracking-tighter group-hover:text-slate-900 transition-colors">{item.name}</span>
-            <span className="ml-auto text-xs font-bold text-slate-900 bg-slate-50 px-2 py-0.5 rounded-md border border-slate-100">{item.value}</span>
+          <div className="flex items-center justify-between group cursor-default" key={item.name}>
+            <div className="flex items-center gap-2">
+              <div
+                className="h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: index === 0 ? 'var(--text-primary)' : 'var(--border)' }}
+              />
+              <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-tight">{item.name}</span>
+            </div>
+            <span className="text-[10px] font-black text-black dark:text-white tabular-nums tracking-tighter">{item.value}</span>
           </div>
         ))}
       </div>

@@ -29,14 +29,17 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 10 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+  },
 };
 
 export default function DashboardPage() {
@@ -54,40 +57,40 @@ export default function DashboardPage() {
     ? [
         {
           icon: UsersRound,
-          label: "Total Users",
+          label: "Total Records",
           value: String(data.totalUsers),
-          detail: `${Math.round((data.activeUsers / data.totalUsers) * 100)}% active this month`,
-          trend: [22, 38, 32, 56, 62, 68, 74],
+          detail: "Active system capacity",
+          trend: [20, 40, 30, 60, 50, 80, 70],
         },
         {
           icon: CheckCircle2,
-          label: "Tasks Done",
+          label: "Task Velocity",
           value: String(data.completedTasks),
-          detail: `${Math.round((data.completedTasks / data.totalTasks) * 100)}% completion`,
-          trend: [10, 16, 24, 42, 58, 72, 84],
+          detail: "Completed within cycle",
+          trend: [10, 30, 20, 50, 40, 70, 60],
         },
         {
           icon: Zap,
-          label: "Active Now",
+          label: "Realtime Ops",
           value: String(data.activeUsers),
-          detail: `${Math.round((data.activeUsers / data.totalUsers) * 100)}% of total users`,
-          trend: [24, 30, 26, 34, 42, 50, 58],
+          detail: "Current concurrent sessions",
+          trend: [40, 50, 45, 60, 55, 75, 70],
         },
         {
           icon: ShieldAlert,
-          label: "Critical",
+          label: "Incident Rate",
           value: String(data.criticalTasks),
-          detail: "Needs immediate attention",
-          trend: [74, 68, 62, 52, 45, 38, 24],
+          detail: "Immediate review recommended",
+          trend: [80, 70, 65, 50, 40, 30, 20],
         },
       ]
     : [];
 
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return "Good Morning";
-    if (hour < 18) return "Good Afternoon";
-    return "Good Evening";
+    if (hour < 12) return "System Daily morning briefed";
+    if (hour < 18) return "System Mid-day operational";
+    return "System Evening reporting";
   };
 
   return (
@@ -95,39 +98,35 @@ export default function DashboardPage() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="space-y-8"
+      className="space-y-6"
     >
-      <motion.section variants={itemVariants} className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-blue-600 font-bold text-sm uppercase tracking-widest">
-          <Sparkles className="h-4 w-4" />
-          System Overview
-        </div>
-        <h1 className="font-display text-4xl font-bold tracking-tight">
-          {getGreeting()}, <span className="text-blue-600">{currentUser.name.split(' ')[0]}</span>
+      <motion.section variants={itemVariants} className="flex flex-col gap-1 border-b border-zinc-100 dark:border-zinc-800 pb-6">
+        <h1 className="text-2xl font-bold tracking-tight">
+          {getGreeting()}: <span className="font-medium text-zinc-500">{currentUser.name}</span>
         </h1>
-        <p className="text-slate-500 font-medium">Here's what's happening with your care teams today.</p>
+        <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Workspace Dashboard / Overview</p>
       </motion.section>
 
-      <motion.section variants={itemVariants} className="grid gap-6 xl:grid-cols-4">
+      <motion.section variants={itemVariants} className="grid gap-4 xl:grid-cols-4">
         {isLoading
           ? Array.from({ length: 4 }, (_, index) => (
-              <div className="surface-card skeleton h-[220px] rounded-[32px]" key={index} />
+              <div className="skeleton h-[160px] rounded-lg border border-zinc-100 dark:border-zinc-800" key={index} />
             ))
           : statsCards.map((card) => <StatsCard key={card.label} {...card} />)}
       </motion.section>
 
-      <motion.section variants={itemVariants} className="grid gap-6 xl:grid-cols-[1.55fr_1fr]">
-        {data ? <ActivityChart data={data.activityData} /> : <Card className="skeleton h-[360px]" />}
+      <motion.section variants={itemVariants} className="grid gap-4 xl:grid-cols-[1.5fr_1fr]">
+        {data ? <ActivityChart data={data.activityData} /> : <div className="skeleton h-[360px] rounded-lg border border-zinc-100 dark:border-zinc-800" />}
         {data ? (
           <StatusDonutChart data={data.tasksByStatus} />
         ) : (
-          <Card className="skeleton h-[360px]" />
+          <div className="skeleton h-[360px] rounded-lg border border-zinc-100 dark:border-zinc-800" />
         )}
       </motion.section>
 
-      <motion.section variants={itemVariants} className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-        {data ? <RecentUsers users={data.recentUsers} /> : <Card className="skeleton h-[320px]" />}
-        {data ? <TaskSummary tasks={data.highPriorityTasks} /> : <Card className="skeleton h-[320px]" />}
+      <motion.section variants={itemVariants} className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
+        {data ? <RecentUsers users={data.recentUsers} /> : <div className="skeleton h-[320px] rounded-lg border border-zinc-100 dark:border-zinc-800" />}
+        {data ? <TaskSummary tasks={data.highPriorityTasks} /> : <div className="skeleton h-[320px] rounded-lg border border-zinc-100 dark:border-zinc-800" />}
       </motion.section>
     </motion.div>
   );
