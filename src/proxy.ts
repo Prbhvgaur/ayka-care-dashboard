@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import { AUTH_COOKIE_NAME } from "@/lib/constants";
 
-const protectedPaths = ["/dashboard", "/users", "/tasks", "/settings"];
+const protectedPaths = ["/dashboard", "/users", "/tasks", "/products", "/settings"];
 
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -24,5 +24,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/login", "/dashboard/:path*", "/users/:path*", "/tasks/:path*", "/settings/:path*"],
+  matcher: ["/login", "/dashboard/:path*", "/users/:path*", "/tasks/:path*", "/products/:path*", "/settings/:path*"],
 };

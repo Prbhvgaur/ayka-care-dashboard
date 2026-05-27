@@ -1,13 +1,16 @@
 import { subDays } from "date-fns";
 
+import productsJson from "@/data/products.json";
 import tasksJson from "@/data/tasks.json";
 import usersJson from "@/data/users.json";
 import type { StatsResponse } from "@/types/api";
+import type { Product } from "@/types/product";
 import type { Task } from "@/types/task";
 import type { User } from "@/types/user";
 
 const users = usersJson as User[];
 let tasks = tasksJson as Task[];
+const products = productsJson as Product[];
 
 export function getUsers() {
   return users;
@@ -15,6 +18,10 @@ export function getUsers() {
 
 export function getTasks() {
   return tasks;
+}
+
+export function getProducts() {
+  return products;
 }
 
 export function appendTask(task: Task) {

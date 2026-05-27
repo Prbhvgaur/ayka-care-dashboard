@@ -73,6 +73,7 @@ export function titleFromPath(pathname: string) {
   if (pathname.startsWith("/dashboard")) return "Dashboard";
   if (pathname.startsWith("/users")) return "Users";
   if (pathname.startsWith("/tasks")) return "Tasks";
+  if (pathname.startsWith("/products")) return "Products";
   if (pathname.startsWith("/settings")) return "Settings";
   return "AYKA Care";
 }

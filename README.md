@@ -8,6 +8,7 @@
 - 📊 Executive dashboard with animated KPIs, activity area chart, and task status donut chart
 - 👥 User directory with debounced search, filters, sort, table/grid views, and pagination
 - ✅ Care operations task board with Kanban + list views and validated task creation modal
+- 📦 Product catalog with search, filters, loading states, and responsive product cards
 - 🎨 Responsive design system with light/dark theming, accent controls, and polished empty/loading states
 - 🛡 Security-first API layer with Zod validation, sanitization, cache headers, and protected routes
 
@@ -97,6 +98,7 @@ src
 | `POST` | `/api/auth/logout` | Clear session + CSRF cookies |
 | `GET` | `/api/users` | Filtered, sorted, paginated user directory |
 | `GET` | `/api/tasks` | Filtered, paginated task board data |
+| `GET` | `/api/products` | Filtered, paginated product catalog data |
 | `POST` | `/api/tasks` | Create a validated task record |
 | `GET` | `/api/stats` | Dashboard KPI, chart, and summary data |
 

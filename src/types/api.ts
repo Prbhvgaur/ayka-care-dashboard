@@ -1,3 +1,4 @@
+import type { Product } from "@/types/product";
 import type { Task } from "@/types/task";
 import type { User } from "@/types/user";
 
@@ -29,3 +30,5 @@ export interface StatsResponse {
 export interface ApiError {
   message: string;
 }
+
+export type ProductsResponse = PaginatedResponse<Product>;

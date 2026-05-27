@@ -1,6 +1,7 @@
 import {
   CheckSquare,
   LayoutDashboard,
+  Package2,
   Settings,
   Users,
 } from "lucide-react";
@@ -31,6 +32,7 @@ export const NAV_ITEMS = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Users", href: "/users", icon: Users },
   { label: "Tasks", href: "/tasks", icon: CheckSquare },
+  { label: "Products", href: "/products", icon: Package2 },
   { label: "Settings", href: "/settings", icon: Settings },
 ] as const;
 

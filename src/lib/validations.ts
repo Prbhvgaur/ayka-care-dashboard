@@ -50,6 +50,14 @@ export const taskQuerySchema = z.object({
   limit: z.coerce.number().min(1).max(50).default(12),
 });
 
+export const productQuerySchema = z.object({
+  search: z.string().optional(),
+  category: z.string().optional(),
+  status: z.string().optional(),
+  page: z.coerce.number().min(1).default(1),
+  limit: z.coerce.number().min(1).max(50).default(9),
+});
+
 export const profileSchema = z.object({
   name: z.string().min(2, "Name is required."),
   email: z.email("Enter a valid email."),
