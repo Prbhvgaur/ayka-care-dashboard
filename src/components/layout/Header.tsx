@@ -12,6 +12,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useDataStore } from "@/store/dataStore";
 import { useUiStore } from "@/store/uiStore";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
   const pathname = usePathname();
@@ -46,29 +47,37 @@ export function Header() {
             {titleFromPath(pathname)}
           </h1>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <label className="glass-panel flex min-w-[240px] items-center gap-3 rounded-full px-4 py-3">
-            <Search className="h-4 w-4 text-[var(--text-secondary)]" />
-            <input
-              aria-label="Global search"
-              className="w-full bg-transparent text-sm outline-none"
-              placeholder="Search patients, users, tasks..."
-              ref={inputRef}
-            />
-            <span className="hidden rounded-full bg-[var(--bg-tertiary)] px-2 py-1 text-xs text-[var(--text-secondary)] sm:inline-flex">
-              Cmd K
-            </span>
-          </label>
+        <div className="flex flex-wrap items-center gap-4">
           <button
+            onClick={() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", ctrlKey: true }))}
+            className="group flex h-9 w-full min-w-[240px] items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)] px-3 text-sm text-[var(--text-muted)] transition-all hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-secondary)] sm:w-auto"
+          >
+            <Search className="h-4 w-4" />
+            <span className="flex-1 text-left">Search or type a command...</span>
+            <div className="flex items-center gap-1 opacity-60">
+              <span className="text-[10px] uppercase font-bold">⌘</span>
+              <span className="text-[10px] font-bold">K</span>
+            </div>
+          </button>
+          <motion.button
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
             aria-label="Notifications"
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border bg-[var(--bg-secondary)] transition hover:-translate-y-0.5"
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition-colors hover:bg-slate-50"
             type="button"
           >
-            <Bell className="h-5 w-5" />
-            <span className="absolute -right-0.5 -top-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--color-danger)] px-1 text-[10px] font-bold text-white">
-              {notificationCount}
-            </span>
-          </button>
+            <Bell className="h-5 w-5 text-slate-600" />
+            <AnimatePresence>
+              <motion.span 
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                key={notificationCount}
+                className="absolute -right-0.5 -top-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white shadow-[0_0_10px_rgba(239,68,68,0.4)]"
+              >
+                {notificationCount}
+              </motion.span>
+            </AnimatePresence>
+          </motion.button>
           <ThemeToggle />
           <DropdownMenu.Root>
             <DropdownMenu.Trigger className="glass-panel inline-flex items-center gap-3 rounded-full px-3 py-2 outline-none">

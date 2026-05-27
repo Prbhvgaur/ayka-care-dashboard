@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { Spinner } from "@/components/ui/Spinner";
 import { cn } from "@/lib/utils";
@@ -12,8 +12,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", loading = false, children, ...props }, ref) => {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
-      <button
+      <motion.button
+        whileHover={shouldReduceMotion ? {} : { scale: 1.01, y: -1 }}
+        whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
         className={cn(
           variant === "primary" && "btn-primary",
           variant === "secondary" && "btn-secondary",
@@ -27,7 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? <Spinner /> : null}
         {children}
-      </button>
+      </motion.button>
     );
   },
 );

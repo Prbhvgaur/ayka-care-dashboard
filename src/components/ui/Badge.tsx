@@ -4,10 +4,12 @@ export function Badge({
   children,
   tone = "neutral",
   kind = "status",
+  className,
 }: {
   children: React.ReactNode;
   tone?: "neutral" | "brand" | "success" | "warning" | "danger";
   kind?: "status" | "priority";
+  className?: string;
 }) {
   const resolvedTone = kind === "status" ? statusTone(String(children)) : priorityTone(String(children));
   const palette = {
@@ -23,6 +25,7 @@ export function Badge({
       className={cn(
         "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold capitalize",
         palette[resolvedTone ?? tone],
+        className,
       )}
     >
       {children}

@@ -1,41 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Geist:wght@100..900&display=swap");
 @import "tailwindcss";
 
 :root {
-  --color-brand: #0a84ff;
-  --color-brand-dark: #0066cc;
-  --color-brand-light: #e8f2ff;
-  --color-success: #34c759;
-  --color-warning: #ff9f0a;
-  --color-danger: #ff3b30;
-  --bg-primary: #f8f9fc;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f0f2f8;
-  --text-primary: #0d1117;
-  --text-secondary: #4a5568;
-  --text-muted: #a0aec0;
-  --border: #e2e8f0;
-  --shadow: 0 1px 3px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
-  --shadow-md: 0 4px 16px rgb(0 0 0 / 0.08);
-  --shadow-lg: 0 10px 40px rgb(0 0 0 / 0.12);
-  --font-display: "Syne", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --color-brand: #000000;
+  --color-brand-foreground: #ffffff;
+  --color-accent: #2563eb;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f4f4f5;
+  --text-primary: #09090b;
+  --text-secondary: #71717a;
+  --text-muted: #a1a1aa;
+  --border: #e4e4e7;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-tertiary: #1c2128;
-  --text-primary: #f0f6fc;
-  --text-secondary: #8b949e;
-  --text-muted: #484f58;
-  --border: #21262d;
-  --shadow: 0 1px 3px rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 16px rgb(0 0 0 / 0.4);
+  --color-brand: #ffffff;
+  --color-brand-foreground: #000000;
+  --bg-primary: #09090b;
+  --bg-secondary: #09090b;
+  --bg-tertiary: #18181b;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #3f3f46;
+  --border: #27272a;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
 }
 
 html,
@@ -73,11 +72,16 @@ a {
 }
 
 .surface-card {
-  border: 1px solid rgb(255 255 255 / 0.45);
+  border: 1px solid color-mix(in srgb, var(--border) 10%, transparent);
   border-radius: var(--radius-xl);
-  background: color-mix(in srgb, var(--bg-secondary) 88%, transparent);
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--bg-secondary) 95%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.surface-card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .glass-panel {
